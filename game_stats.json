@@ -1,0 +1,10 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "Game type": "Computer guesses",
+            "Guesses": 6,
+            "Secret number": 54
+        }
+    ]
+}
