@@ -5,6 +5,12 @@
             "Game type": "Computer guesses",
             "Guesses": 6,
             "Secret number": 54
+        },
+        {
+            "id": 2,
+            "Game type": "Player guesses",
+            "Guesses": 7,
+            "Secret number": 99
         }
     ]
 }

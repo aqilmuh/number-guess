@@ -29,8 +29,9 @@ def player_guess():
     while True:
         try:
             guess = int(input("Enter your guess (1-100): "))
-            guesses += 1
+            
             if 1 <= guess <= 100:
+                guesses += 1
                 if guess < secret_number:
                     print("Too low! Try again.")
                 elif guess > secret_number:
@@ -46,7 +47,7 @@ def player_guess():
 
     save_stats("Player guesses", guesses, secret_number)
 
-def computer_guess():
+def computer_guess(): 
     print("""
 How to play:
 Think of a number between 1 and 100, and I will try to guess it.
@@ -57,24 +58,25 @@ Respond with 'h' if it's higher, 'l' if lower, or 'c' if correct.
     steps = 0
     while True:
         guess = (low + high) // 2
-        steps += 1
 
         response = input(f"Is your number {guess}? (h/l/c): ").lower()
         if response == 'h':
             low = guess + 1
+            steps += 1
         elif response == 'l':
             high = guess - 1
+            steps += 1
         elif response == 'c':
+            steps += 1
             print(f"Yay! I guessed your number {guess} correctly!")
             print(f"It took me only {steps} step to guess the number." if steps == 1 else f"It took me {steps} steps to guess the number.")
+            save_stats("Computer guesses", steps, guess)
             break
         else:
             print("Invalid input. Please respond with 'h' for higher, 'l' for lower, or 'c' for correct.")
         if low > high:
             print("Hmm, it seems there's a contradiction in your responses. Let's start over.")
             break
-
-    save_stats("Computer guesses", steps, guess)
 
 def main():
     print("Welcome to the Number Guessing Game!")
