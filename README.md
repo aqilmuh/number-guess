@@ -229,5 +229,4 @@ All three projects use only Python's standard library (`random` and `json`), so 
 ---
 
 ## 📄 License
-
-Add a license of your choice here (for example, MIT).
+[MIT](https://mit-license.org/)
